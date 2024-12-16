@@ -4,17 +4,18 @@ package handlers
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"hangman/entities"
 	"hangman/services"
+	"os"
+	"strings"
 )
 
 // StartGame initializes and runs the Hangman game
 func StartGame() {
 	game := entities.Game{
-		Word:          "golang", // Secret word to guess
-		Guessed:       []string{},
-		RemainingTries: 6,       // Allow 6 wrong guesses
+		Word:           "golang", // Secret word to guess
+		Guessed:        []string{},
+		RemainingTries: 6, // Allow 6 wrong guesses
 	}
 
 	reader := bufio.NewReader(os.Stdin)
